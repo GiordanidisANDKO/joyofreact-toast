@@ -11,8 +11,7 @@ const VARIANT_OPTIONS = ["notice", "warning", "success", "error"];
 import { ToastContext } from "../ToastProvider";
 
 function ToastPlayground() {
-  const { createToast } = React.useContext(ToastContext);
-  const { toasts } = React.useContext(ToastContext);
+  const { toasts, removeToast, createToast } = React.useContext(ToastContext);
 
   const [message, setMessage] = React.useState("");
 

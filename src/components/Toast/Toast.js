@@ -31,14 +31,16 @@ function Toast({ children, toastKey, variant }) {
         <Tag size={24} />
       </div>
       <p className={styles.content}>{children}</p>
+      <VisuallyHidden>{styles[variant]} - </VisuallyHidden>
       <button
         className={styles.closeButton}
+        aria-label="Dismiss message"
+        aria-live="off"
         onClick={() => {
           removeToast(toastKey);
         }}
       >
         <X size={24} />
-        <VisuallyHidden>Dismiss message</VisuallyHidden>
       </button>
     </div>
   );
