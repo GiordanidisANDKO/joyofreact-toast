@@ -18,8 +18,12 @@ const ICONS_BY_VARIANT = {
   error: AlertOctagon,
 };
 
-function Toast({ children, toastKey, variant, removeToast }) {
+import { ToastContext } from "../ToastProvider";
+
+function Toast({ children, toastKey, variant }) {
   const Tag = ICONS_BY_VARIANT[variant];
+
+  const { removeToast } = React.useContext(ToastContext);
 
   return (
     <div className={`${styles.toast} ${styles[variant]}`}>
